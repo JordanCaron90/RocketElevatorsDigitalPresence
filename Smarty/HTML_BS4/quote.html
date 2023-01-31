@@ -203,23 +203,25 @@
 
 							<form action="php/contact.php" method="post" enctype="multipart/form-data">
 								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
-                                        <select name="building type" id="Building type" form="buildingtypeform">
-                                            <option value="residential">residential</option>
-                                            <option value="commercial"> commercial</option>
-                                            <option value="indusctrial">industrial</option>
+									<div class="form-floating">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                          <option id="building type" selected>Building Type</option>
+                                          <option id="residential" value="resdential">Residential</option>
+                                          <option id="commercial" value="commercial">Commercial</option>
+                                          <option id="industrial" value="industrial">Industrial</option>
                                         </select>
+                                      </div>
                                       <br>
 
                                         <div class="row">
 											<div class="col-md-12">
                                                 <div id="number-of-apartements" class="input-field">
-                                                    <label>Nombre d'appartements</label>
+                                                    <label>Nombre d'apartements</label>
                                                     <input id="apartements-input" type="text" placeholder="20" />
                                                 </div>
 											</div>
                                             <div class="col-md-12">
-                                                <div id="numer-of-floors" class="input-field">
+                                                <div id="number-of-floors" class="input-field">
                                                     <label>Nombre d'etages</label>
                                                     <input id="floors-input" type="text" placeholder="20" />
                                                 </div>
@@ -240,12 +242,14 @@
                                     <br>
 
                                     
-									<input type="hidden" name="action" value="contact_send" />
-                                    <select name="prices" id="prices" form="proceform">
-                                        <option value="standard">Standard</option>
-                                        <option value="premium">Premium</option>
-                                        <option value="excelium">excelium</option>
-                                    </select>
+									<div class="form-floating">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                          <option id="prices" selected>Prices</option>
+                                          <option id="standard" value="resdential">Standard</option>
+                                          <option id="premium" value="commercial">Premium</option>
+                                          <option id="excelium" value="industrial">Excelium</option>
+                                        </select>
+                                      </div>
                                     <br>
 
                                     <div class="col-md-12">
@@ -394,5 +398,6 @@
 			});
 
 		</script>
+        <script src="quote.js"></script>
 	</body>
 </html>
