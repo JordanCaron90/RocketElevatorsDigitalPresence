@@ -204,60 +204,48 @@
 							<form action="php/contact.php" method="post" enctype="multipart/form-data">
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          building type
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#" id="building type">residential</a>
-                                          <a class="dropdown-item" href="#" id="building type">Commercial</a>
-                                          <a class="dropdown-item" href="#" id="building type">Indusctrial</a>
-                                        </div>
-                                      </div>
+                                        <select name="building type" id="Building type" form="buildingtypeform">
+                                            <option value="residential">residential</option>
+                                            <option value="commercial"> commercial</option>
+                                            <option value="indusctrial">industrial</option>
+                                        </select>
                                       <br>
 
-                                            <div class="row">
+                                        <div class="row">
 											<div class="col-md-12">
-                                                <div id="nombre d'appartements" class="input-field">
+                                                <div id="number-of-apartements" class="input-field">
                                                     <label>Nombre d'appartements</label>
-                                                    <input id="apartements-input" type="text" placeholder="20"
-                                                />
+                                                    <input id="apartements-input" type="text" placeholder="20" />
                                                 </div>
 											</div>
                                             <div class="col-md-12">
-                                                <div id="nombre d'etages" class="input-field">
+                                                <div id="numer-of-floors" class="input-field">
                                                     <label>Nombre d'etages</label>
-                                                    <input id="floors-input" type="text" placeholder="20"
-                                                />
+                                                    <input id="floors-input" type="text" placeholder="20" />
                                                 </div>
 											</div>
                                             <div class="col-md-12">
-                                                <div id="nombre d'occupants" class="input-field">
+                                                <div id="maximum-of-occupancy" class="input-field">
                                                     <label>Nombre d'occupants</label>
-                                                    <input id="occupancy-input" type="text" placeholder="20"
-                                                />
+                                                    <input id="occupancy-input" type="text" placeholder="20" />
                                                 </div>
 											</div>
                                             <div class="col-md-12">
-                                                <div id="nombre d'ascenseurs requis" class="input-field">
+                                                <div id="number-of-elevators" class="input-field">
                                                     <label>Nombre d'ascenseurs requis</label>
-                                                    <input id="elevators-input" type="text" placeholder="20"
-                                                />
+                                                    <input id="elevators-input" type="text" placeholder="20" />
                                                 </div>
 											</div>
-									</div>
+                                        </div>
                                     <br>
 
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Prices
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#">Standard</a>
-                                          <a class="dropdown-item" href="#">Premium</a>
-                                          <a class="dropdown-item" href="#">Excelium</a>
-                                        </div>
-                                      </div>
+                                    
+									<input type="hidden" name="action" value="contact_send" />
+                                    <select name="prices" id="prices" form="proceform">
+                                        <option value="standard">Standard</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="excelium">excelium</option>
+                                    </select>
                                     <br>
 
                                     <div class="col-md-12">
