@@ -205,7 +205,7 @@
 								<fieldset>
 									<div class="form-floating">
                                         <select class="form-select" id="dropdown" aria-label="Floating label select example">
-                                          <option id="building type" selected>Building Type</option>
+                                          <option id="building type" value="buildingType">Building Type</option>
                                           <option id="residential" value="residential">Residential</option>
                                           <option id="commercial" value="commercial">Commercial</option>
                                           <option id="industrial" value="industrial">Industrial</option>
@@ -242,17 +242,24 @@
                                     <br>
 
                                     
-									<div class="form-floating">
-                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                          <option id="prices" selected>Prices</option>
-                                          <option id="standard" value="resdential">Standard</option>
-                                          <option id="premium" value="commercial">Premium</option>
-                                          <option id="excelium" value="industrial">Excelium</option>
-                                        </select>
+									<div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="standard" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Standard</label>
                                       </div>
-                                    <br>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="premium" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Premium</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="excelium" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">Excelium</label>
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <br>
+                                      <br>
 
-                                    <div class="col-md-12">
+                                      <div class="col-md-12">
                                         <label for="contact:subject">Company Name *</label>
                                         <input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
                                     </div>

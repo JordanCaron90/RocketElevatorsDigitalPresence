@@ -10,20 +10,15 @@ hit3.style.display ='none'
 
 const dropdown = document.getElementById('dropdown')
 
-// Les value peuve etre 
+// Les value peuve etre
+// building type
 // residential
 // commercial
 // industrial
 
 dropdown.addEventListener('change', (event) => {
     console.log(dropdown.value)
-    if (dropdown.value == 'building type') {
-        hit0.style.display = ('none');
-        hit1.style.display = ('none');
-        hit2.style.display = ('none');
-        hit3.style.display = ('none');
-    }
-    else if (dropdown.value == 'residential') {
+    if (dropdown.value == 'residential') {
         hit0.style.display = ('block');
         hit1.style.display = ('block');
         hit2.style.display = ('none');
@@ -38,5 +33,10 @@ dropdown.addEventListener('change', (event) => {
         hit1.style.display = ('none');
         hit2.style.display = ('none');
         hit3.style.display = ('block');
+    }  else if (dropdown.value =='buildingType') {
+        hit0.style.display = ('none');
+        hit1.style.display = ('none');
+        hit2.style.display = ('none');
+        hit3.style.display = ('none');
     }
 })
