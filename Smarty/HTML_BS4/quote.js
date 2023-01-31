@@ -40,3 +40,24 @@ dropdown.addEventListener('change', (event) => {
         hit3.style.display = ('none');
     }
 })
+
+function calculateResidential() {
+    const app = document.getElementById('number-of--appartements').value;
+    const floor = document.getElementById('number-of-floors').value;
+    
+    const AppPerFloor = app/floor
+    const ascenseurRequis = kkchose.RoundPlusHaut(AppPerFloor/6)
+    const columnAditionel = floor/20
+    const vraiAscenseurRequis = ascenseurRequis * columnAditionel
+
+}
+function calculateCommmercial() {
+    const floors = document.getElementById('numer-of-floors').value;
+    const occup = document.getElementById('maximum-occupancy').value;
+
+    const occupantMax = occup * floors
+    const ascRequis = occupantMax/200 
+    const coloneNumber = floors/10 
+    const vraiAscenseurRequis = ascRequis + coloneNumber
+
+}
