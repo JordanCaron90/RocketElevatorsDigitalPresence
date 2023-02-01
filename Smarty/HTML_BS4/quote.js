@@ -12,6 +12,7 @@ const dropdown = document.getElementById('dropdown')
 let app = document.getElementById('apartements-input').value;
 let floor = document.getElementById('floors-input').value;
 let occup = document.getElementById('occupancy-input').value;
+let ascRequis = document.getElementById('elevators-input').value;
 
 // Les value peuve etre
 // building type
@@ -40,7 +41,7 @@ dropdown.addEventListener('change', (event) => {
         hit1.style.display = ('none');
         hit2.style.display = ('none');
         hit3.style.display = ('block');
-        document.getElementById('elevators-output').value = calculateIndustrial();
+        document.getElementById('elevators-output').value = calculateIndustrial(ascRequis);
     }  else if (dropdown.value =='buildingType') {
         hit0.style.display = ('none');
         hit1.style.display = ('none');
@@ -58,7 +59,7 @@ function calculateResidential(app, floor) {
     console.log(floor)
     const AppPerFloor = app/floor
     console.log(AppPerFloor)
-    const ascRequis = AppPerFloor/6
+    const ascRequis = Math.round(40.0, AppPerFloor/6)
     console.log(ascRequis)
     const columnAditionel = floor/20
     console.log('Column : ' + columnAditionel)
@@ -75,20 +76,20 @@ function calculateCommmercial(floor, occup) {
     console.log(occup)
     const occupantMax = floor * occup
     console.log(occupantMax)
-    const ascRequis = occupantMax/200 
+    const ascRequis = Math.round(3.0, occupantMax/200) 
     console.log(ascRequis)
     const coloneNumber = floor/10 
     console.log('Column')
     const vraiAscenseurRequis = ascRequis + coloneNumber
     console.log(vraiAscenseurRequis)
-    return vraiAscenseurRequis
+    return vraiAscenseurRequis;
 
 }
 
-function calculateIndustrial() {
-    const ascRequis = document.getElementById('number-of-elevators');
+function calculateIndustrial(ascRequis) {
+    ascRequis = document.getElementById('elevators-input').value;
 
-    const vraiAscenseurRequis = ascDemander
-    const returnvalue = documment.getElementById('industrial-output').value = vraiAscenseurRequis;
+    const vraiAscenseurRequis = ascRequis
+    return vraiAscenseurRequis
     
 }
