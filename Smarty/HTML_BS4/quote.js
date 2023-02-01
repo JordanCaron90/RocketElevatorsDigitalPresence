@@ -42,22 +42,32 @@ dropdown.addEventListener('change', (event) => {
 })
 
 function calculateResidential() {
-    const app = document.getElementById('number-of--appartements').value;
+    const app = document.getElementById('number-of-appartements').value;
     const floor = document.getElementById('number-of-floors').value;
     
     const AppPerFloor = app/floor
-    const ascenseurRequis = kkchose.RoundPlusHaut(AppPerFloor/6)
+    const ascRequis = kkchose.Roundup (AppPerFloor/6)
     const columnAditionel = floor/20
-    const vraiAscenseurRequis = ascenseurRequis * columnAditionel
+    const vraiAscenseurRequis = ascRequis * columnAditionel
+    document.getElementById('elevators-ouput').value = vraiAscenseurRequis;
 
 }
 function calculateCommmercial() {
-    const floors = document.getElementById('numer-of-floors').value;
+    const floor = document.getElementById('numer-of-floors').value;
     const occup = document.getElementById('maximum-occupancy').value;
 
-    const occupantMax = occup * floors
+    const occupantMax = floor * occup
     const ascRequis = occupantMax/200 
     const coloneNumber = floors/10 
     const vraiAscenseurRequis = ascRequis + coloneNumber
+    document.getElementById('elevators-output').value = vraiAscenseurRequis;
 
+}
+
+function calculateIndustrial() {
+    const ascRequis = document.getElementById('number-of-elevators').value;
+
+    const vraiAscenseurRequis = ascDemander
+    const returnvalue = documment.getElementById('industrial-output').value = vraiAscenseurRequis;
+    
 }
