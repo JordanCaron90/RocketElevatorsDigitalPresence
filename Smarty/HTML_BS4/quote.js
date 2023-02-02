@@ -9,10 +9,17 @@ hit3 = document.getElementById('number-of-elevators')
 hit3.style.display ='none'
 
 const dropdown = document.getElementById('dropdown')
+
+//input variables
 let app = document.getElementById('apartements-input').value;
 let floor = document.getElementById('floors-input').value;
 let occup = document.getElementById('occupancy-input').value;
 let ascRequis = document.getElementById('elevators-input').value;
+
+//output variables
+let standard = document.getElementById('standard-output').value;
+let premium = document.getElementById('premium-output').value;
+let excelium = document.getElementById('standard-output').value;
 
 // Les value peuve etre
 // building type
@@ -94,35 +101,25 @@ function calculateIndustrial(ascRequis) {
     
 }
 
-function calculateStandard(){
-    standard = document.getElementById('standard-input').value;
-    premium = document.getElementById('premium-input').value;
-    excelium = document.getElementById('excelium-input').value;
-}
-
-let result = document.getElementById('priceQuality').value;
-document.body.addEventListener('change', function () {
-    let quality = document.getElementById('price-output');
-    let target = quality;
-    var price;
-    var percentage;
-    
-    
-    switch (target.price, percentage) {
-        case 'standard':
-            price = 8000;
-            percentage = 0.10;
-            break;
-        case 'premium':
-            price = 12000;
-            percentage = 0.15;
-            break;
-        case 'excelium':
-            price = 15000;
-            percentage = 0.20;
-            break;
+var price;
+var percentage;
+priceQuality.addEventListener('click', () => {
+    console.log(priceQuality)
+    if (priceQuality.value =='standard') {
+        price = 8000
+        percentage = 0.10
+        document.getElementId('standard-ouput').value = price;
+        //return
+    } else if (priceQuality.value =='premium') {
+        price = 12000
+        percentage = 0.15
+        document.getElementId('premium-ouput').value = price;
+        //return
+    } else if (priceQuality.value =='excelium') {
+        price = 15000
+        percentage = 0.20
+        document.getElementId('excelium-ouput').value = price;
+        //return
     }
-    return result.quality = price;
-    
-});
-
+     
+  });
