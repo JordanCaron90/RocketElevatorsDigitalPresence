@@ -20,7 +20,7 @@ let ascRequis = document.getElementById('elevators-input').value;
 // commercial
 // industrial
 
-dropdown.addEventListener('change', (event) => {
+dropdown.addEventListener('change',  (event) => {
     console.log(dropdown.value)
     if (dropdown.value == 'residential') {
         hit0.style.display = ('block');
@@ -57,11 +57,11 @@ function calculateResidential(app, floor) {
     floor = document.getElementById('floors-input').value;
     console.log(app)
     console.log(floor)
-    const AppPerFloor = app/floor
+    const AppPerFloor = Math.ceil(app/floor)
     console.log(AppPerFloor)
-    const ascRequis = Math.round(40.0, AppPerFloor/6)
+    const ascRequis = Math.ceil(AppPerFloor/6)
     console.log(ascRequis)
-    const columnAditionel = floor/20
+    const columnAditionel = Math.ceil(floor/20)
     console.log('Column : ' + columnAditionel)
     const vraiAscenseurRequis = ascRequis * columnAditionel
     console.log(vraiAscenseurRequis)
@@ -76,9 +76,9 @@ function calculateCommmercial(floor, occup) {
     console.log(occup)
     const occupantMax = floor * occup
     console.log(occupantMax)
-    const ascRequis = Math.round(3.0, occupantMax/200) 
+    const ascRequis = Math.ceil(occupantMax/200) 
     console.log(ascRequis)
-    const coloneNumber = floor/10 
+    const coloneNumber = Math.ceil(floor/10) 
     console.log('Column')
     const vraiAscenseurRequis = ascRequis + coloneNumber
     console.log(vraiAscenseurRequis)
@@ -93,3 +93,36 @@ function calculateIndustrial(ascRequis) {
     return vraiAscenseurRequis
     
 }
+
+function calculateStandard(){
+    standard = document.getElementById('standard-input').value;
+    premium = document.getElementById('premium-input').value;
+    excelium = document.getElementById('excelium-input').value;
+}
+
+let result = document.getElementById('priceQuality').value;
+document.body.addEventListener('change', function () {
+    let quality = document.getElementById('price-output');
+    let target = quality;
+    var price;
+    var percentage;
+    
+    
+    switch (target.price, percentage) {
+        case 'standard':
+            price = 8000;
+            percentage = 0.10;
+            break;
+        case 'premium':
+            price = 12000;
+            percentage = 0.15;
+            break;
+        case 'excelium':
+            price = 15000;
+            percentage = 0.20;
+            break;
+    }
+    return result.quality = price;
+    
+});
+
