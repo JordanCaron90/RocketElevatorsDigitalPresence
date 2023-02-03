@@ -241,38 +241,29 @@
                                         </div>
                                     <br>
 
-                                    
-									<div name="myForm" id="priceQuality" class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="standard-output" value="standard">
-                                        <label class="form-check-label" for="inlineRadio1">Standard</label>
-                                      
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="premium-output" value="premium">
-                                        <label class="form-check-label" for="inlineRadio2">Premium</label>
-                                      
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="excelium-output" value="excelium">
-                                        <label class="form-check-label" for="inlineRadio3">Excelium</label>
-                                      </div>
-                                      <br>
-                                      <br>
-                                      <br>
-                                      <br>
-
-                                      <div class="col-md-12">
-                                        <label for="contact:subject">Elevators required</label>
-                                        <input required type="number" value="" class="form-control" name="contact[subject][required]" id="elevators-output">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="contact:subject">Price of elevators</label>
-                                        <input required type="number" value="" class="form-control" name="contact[subject][required]" id="prices-of-elevator-ouput">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="contact:subject">Instalation price</label>
-                                        <input required type="number" value="" class="form-control" name="contact[subject][required]" id="instalation-ouput">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="contact:subject">Total price</label>
-                                        <input required type="number" value="" class="form-control" name="contact[subject][required]" id="total-price-ouput">
-                                    </div>
+									<input type="radio" id="stand" name="price-quality" value="standard">Standard
+									<input type="radio" id="prem" name="price-quality" value="premium">Premium
+									<input type="radio" id="exce" name="price-quality" value="excelium">Excelium
+									<br>
+									<br>
+									<br>
+									
+									<div class="col-md-12">
+									  <label for="elevators-required">Elevators required</label>
+									  <input required type="number" value="" class="elevators-output" name="elevators-required" id="elevators-required">
+									</div>
+									<div class="col-md-12">
+									  <label for="price-of-elevators">Price of elevators</label>
+									  <input required type="number" value="" class="prices-of-elevator-output" name="price-of-elevators" id="price-of-elevators">
+									</div>
+									<div class="col-md-12">
+									  <label for="instalation-price">Instalation price</label>
+									  <input required type="number" value="" class="instalation-output" name="instalation-price" id="instalation-price">
+									</div>
+									<div class="col-md-12">
+									  <label for="total-price">Total price</label>
+									  <input required type="number" value="" class="total-price-ouput" name="total-price" id="total-price">
+									</div>
 							</form>
 
 						</div>

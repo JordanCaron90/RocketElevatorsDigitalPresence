@@ -16,10 +16,6 @@ let floor = document.getElementById('floors-input').value;
 let occup = document.getElementById('occupancy-input').value;
 let ascRequis = document.getElementById('elevators-input').value;
 
-//output variables
-let standard = document.getElementById('standard-output').value;
-let premium = document.getElementById('premium-output').value;
-let excelium = document.getElementById('standard-output').value;
 
 // Les value peuve etre
 // building type
@@ -28,27 +24,26 @@ let excelium = document.getElementById('standard-output').value;
 // industrial
 
 dropdown.addEventListener('change',  (event) => {
-    console.log(dropdown.value)
     if (dropdown.value == 'residential') {
         hit0.style.display = ('block');
         hit1.style.display = ('block');
         hit2.style.display = ('none');
         hit3.style.display = ('none');
         calculateResidential(app, floor);
-        document.getElementById('elevators-output').value = calculateResidential(app, floor);
+        document.getElementById('elevators-required').value = calculateResidential(app, floor);
     }  else if (dropdown.value =='commercial') {
         hit0.style.display = ('none');
         hit1.style.display = ('block');
         hit2.style.display = ('block');
         hit3.style.display = ('none');
         calculateCommmercial(floor, occup);
-        document.getElementById('elevators-output').value = calculateCommmercial(floor, occup);
+        document.getElementById('elevators-required').value = calculateCommmercial(floor, occup);
     }  else if (dropdown.value =='industrial') {
         hit0.style.display = ('none');
         hit1.style.display = ('none');
         hit2.style.display = ('none');
         hit3.style.display = ('block');
-        document.getElementById('elevators-output').value = calculateIndustrial(ascRequis);
+        document.getElementById('elevators-required').value = calculateIndustrial(ascRequis);
     }  else if (dropdown.value =='buildingType') {
         hit0.style.display = ('none');
         hit1.style.display = ('none');
@@ -62,16 +57,10 @@ dropdown.addEventListener('change',  (event) => {
 function calculateResidential(app, floor) {
     app = document.getElementById('apartements-input').value;
     floor = document.getElementById('floors-input').value;
-    console.log(app)
-    console.log(floor)
     const AppPerFloor = Math.ceil(app/floor)
-    console.log(AppPerFloor)
     const ascRequis = Math.ceil(AppPerFloor/6)
-    console.log(ascRequis)
     const columnAditionel = Math.ceil(floor/20)
-    console.log('Column : ' + columnAditionel)
     const vraiAscenseurRequis = ascRequis * columnAditionel
-    console.log(vraiAscenseurRequis)
     return vraiAscenseurRequis;
 }
 
@@ -79,16 +68,10 @@ function calculateResidential(app, floor) {
 function calculateCommmercial(floor, occup) {
     floor = document.getElementById('floors-input').value;
     occup = document.getElementById('occupancy-input').value;
-    console.log(floor)
-    console.log(occup)
     const occupantMax = floor * occup
-    console.log(occupantMax)
-    const ascRequis = Math.ceil(occupantMax/200) 
-    console.log(ascRequis)
-    const coloneNumber = Math.ceil(floor/10) 
-    console.log('Column')
+    const ascRequis = Math.ceil(occupantMax/200)
+    const coloneNumber = Math.ceil(floor/10)
     const vraiAscenseurRequis = ascRequis + coloneNumber
-    console.log(vraiAscenseurRequis)
     return vraiAscenseurRequis;
 
 }
@@ -99,27 +82,40 @@ function calculateIndustrial(ascRequis) {
     const vraiAscenseurRequis = ascRequis
     return vraiAscenseurRequis
     
-}
+} 
+  //3 nouveau add listener for radio click
 
-var price;
-var percentage;
-priceQuality.addEventListener('click', () => {
-    console.log(priceQuality)
-    if (priceQuality.value =='standard') {
-        price = 8000
-        percentage = 0.10
-        document.getElementId('standard-ouput').value = price;
-        //return
-    } else if (priceQuality.value =='premium') {
-        price = 12000
-        percentage = 0.15
-        document.getElementId('premium-ouput').value = price;
-        //return
-    } else if (priceQuality.value =='excelium') {
-        price = 15000
-        percentage = 0.20
-        document.getElementId('excelium-ouput').value = price;
-        //return
-    }
-     
+  let standard = document.getElementById('stand');
+  let premium = document.getElementById('prem');
+  let excelium = document.getElementById('exce');
+  let priceOfElevators = document.getElementById('price-of-elevators');
+  //variable pour frais dinstallation
+  let instalationField = document.getElementById('instalation-price')
+
+  standard.addEventListener('click', function () {
+    let elevRequire = document.getElementById('elevators-required').value;
+    let price = 8000;
+    let percentage = 0.10;
+    priceOfElevators.value = price 
+    elevRequire * price * percentage
+
   });
+
+  premium.addEventListener('click', function () {
+    let price = 12000;
+    let percentage = 0.15;
+    priceOfElevators.value = price + price * percentage;
+  });
+
+  excelium.addEventListener('click', function (){
+    let price = 15000;
+    let percentage = 0.20;
+    priceOfElevators.value = price + price * percentage;
+  });
+
+let numberOfLifts = document.getElementById('elevators-required').value;
+let installationCost = document.getElementById('instalation-price').value;
+
+let totalCost = (priceOfElevators * numberOfLifts) + installationCost;
+
+document.getElementById('total-price').value = totalCost;
