@@ -221,3 +221,22 @@ buildingType_select.addEventListener("change", function () {
         });
     }
 });
+
+// Section agent
+
+fetch('99.79.77.144:3000/api/agents')
+.then(response => response.json())
+.then(employees => {
+  var filteredEmployees = employees.filter(function(employee) {
+    return employee.ratio >= 95;
+  });
+
+  var fullNames = filteredEmployees.map(function(employee) {
+    return '${employee.firstName} ${employee.lastName} ${employee.rating} ${employee.fee}';
+  });
+
+  document.getElementById('bestAgent').innerHTML = fullNames.join(', ');
+
+  console.log(fullNames);
+})
+.catch(error => console.error(error));

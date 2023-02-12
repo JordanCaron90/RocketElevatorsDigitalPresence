@@ -67,7 +67,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+#annee {
+    color: #ff1e29;
+  }
 /* example usage: index-onepage-youtube.html */
 body.has-image-bg section,
 body.has-video-bg section {
@@ -153,7 +155,7 @@ section.alternate {
 }
 
 section.dark {
-    background-color: #212121 !important;
+    background-color: #012f54 !important;
     border-bottom: rgba(255, 255, 255, 0.1) 1px solid;
 }
 section.dark.alternate {
