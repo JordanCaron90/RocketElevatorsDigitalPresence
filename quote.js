@@ -240,3 +240,27 @@ fetch('99.79.77.144:3000/api/agents')
   console.log(fullNames);
 })
 .catch(error => console.error(error));
+
+const backgroundColor = document.getElementById('residential');
+const backgroundColor2 = document.getElementById('commercial');
+const Color3 = document.getElementById('industrial');
+
+buildingType_select.addEventListener('change', function (){
+if (buildingType_select.value === 'residential') {
+    backgroundColor.style.backgroundColor ="#0a65a0";
+    backgroundColor2.style.backgroundColor ="#0a65a0";
+    Color3.style.color = "#3F3F3F"
+}
+else if (buildingType_select.value === 'commercial') {
+    backgroundColor.style.backgroundColor ="#A94545";
+    backgroundColor2.style.backgroundColor ="#A94545";
+    Color3.style.color = "rgb(10, 101, 160)";
+}
+else if (buildingType_select.value === 'industrial') {
+    backgroundColor.style.backgroundColor ="#888";
+    backgroundColor2.style.backgroundColor ="#888";
+    Color3.style.color = "rgb(10, 101, 160)";
+    console.log(backgroundColor)
+
+}
+});
